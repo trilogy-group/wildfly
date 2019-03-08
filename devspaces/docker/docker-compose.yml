@@ -1,0 +1,14 @@
+version: '3.2'
+services:  
+  trilogy-wildfly:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: ../../
+        target: /data
+    container_name: trilogy-wildfly
+    ports: 
+      - "8080:8080"
+    network_mode: host

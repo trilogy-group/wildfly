@@ -1,0 +1,20 @@
+--- # devspaces.yml
+name: trilogy-wildfly
+description: Development environment for Wildfly App Server
+icon-file: wildflylogo.png
+
+docker-file: Dockerfile
+
+docker-build-includes: |
+  **/*
+
+ports:
+  - protocol: http
+    port-number: 8080
+    description: Web Listener
+
+sync-ignore: |
+  .idea
+  .DS_Store
+  .data
+  **/target
